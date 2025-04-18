@@ -1,6 +1,6 @@
 # Which Form of Initialization Should I Choose?
 
-You may have heard opinions like "always use use list-initialization".
+You may have heard opinions like "always use list-initialization".
 However, the preferred form of initialization is situational.
 
 - **Direct-initialization** (`T{0}`, `T t(0)`, ...) may use `explicit` conversions, which we're sometimes trying to avoid, making **copy-initialization** (`T t = u;`) better in that case.
