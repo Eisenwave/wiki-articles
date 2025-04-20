@@ -2,9 +2,14 @@
 
 # Undefined Behavior
 
-Undefined behavior (UB) occurs when you violate rules specified by the language.
-For example: Reading uninitialized memory, performing out-of-bounds memory access,
-or using an object after it no longer exists.
+Undefined behavior (UB) is behavior for which C++ imposes no requirements.
+This could mean that your code crashes,
+isn't executed when it should be,
+or does other unexpected things.
+
+Typical causes are: reading uninitialized memory,
+performing out-of-bounds memory access,
+or using an object when it no longer exists.
 
 <!-- inline -->
 ## Example: Indeterminate Value
@@ -14,20 +19,24 @@ while(i < 10) {
     printf("%d\n", i++);
 }
 ```
+-# Note: Since C++26,
+this code has erroneous behavior, not undefined behavior.
 
 <!-- inline -->
 ## Example: Out-of-Bounds Access
 ```cpp
 int arr[10];
-for(int i = 0; i < 20; i++) {
+for(int i = 0; i<20; i++) {
     arr[i] = 0;
 }
 ```
 
 ## Why it Matters
 
-Compilers often do not give warnings or errors about UB and its existence in your code can cause surprising,
-unpredictable, and buggy behavior.
+Compilers often do not give warnings or errors about UB,
+and its existence in your code can cause surprising,
+unpredictable, and buggy behavior,
+which may even result in security vulnerabilities.
 
 ## See Also
 
