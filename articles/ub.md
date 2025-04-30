@@ -25,8 +25,8 @@ this code has erroneous behavior, not undefined behavior.
 <!-- inline -->
 ## Example: Out-of-Bounds Access
 ```cpp
-int arr[10];
-for(int i = 0; i<20; i++) {
+int arr[4];
+for(int i = 0; i < 8; i++) {
     arr[i] = 0;
 }
 ```
